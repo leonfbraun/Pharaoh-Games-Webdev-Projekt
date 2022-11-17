@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="Escape Room, Games, Free, Ägypten, Egypt">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hast du Interesse an ägyptischen Spielen, bei denen du dir zusätliches Wissen aneignen kannst? Hier kannst du ohne Anmeldung die neusten Spiele spielen!">
+    <title>Kannst du entkommen? - Die Kammer des Pharao Online spielen</title>
+    <meta property="og:title" content="Pharaoh Games - Brandneue Spiele">             <!-- Für Teilung in Social Media-->
+    <meta property="og:description" content="Hast du Interesse an ägyptischen Spielen, bei denen du dir zusätliches Wissen aneignen kannst? Hier kannst du ohne Anmeldung die neusten Spiele spielen!">
+    <meta property="og:type" content="games">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/916041984773337104/932318642530570321/og.PharaoGame.png">        <!-- NOCH ERSTELLEN -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <audio loop="loop" id="myAudio">
+        <source src="music/LanayruDesert.mp3" type="audio/mpeg">
+    </audio>
+    <header>
+        <a href="index.html">
+            <img src="images/PharaohGames2.png" alt="Pharao Games Logobild mit verlinkung zur Startseite" id="logo">
+        </a>
+        <div class="language-menu">
+            <input type="checkbox" id="language-checkbox">
+            <label for="language-checkbox">
+                <span class="language-toggle">🌎</span>
+                <ul class="language-list">
+                    <li><a href="#">Deutsch</a></li>
+                    <li><a href="#">Englisch</a></li>
+                </ul>
+            </label>
+        </div>
+    </header>
+    <nav id="navbar">
+        <input type="checkbox" id="checkbox">
+        <label for="checkbox">
+        <span class="toggle">☰ Menu</span>
+        <ul class="menu">
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="spieleauswahl.html">Spiele</a></li>
+            <li><a href="hintergründe.html">Hintergründe</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="galerie.html">Galerie</a></li>  
+         </ul>
+        </label>
+    </nav>
+    <section class="spiel-main-section">
+        <div class="spiel-fenster">
+            <div id="spiel-startscreen">
+                <button id="start-button">Start Game</button>
+            </div>
+            <div class="dialog-box">
+                <p id="dialog-text">... ich sollte die Schriftzeichen an der Wand überprüfen.</p>
+            </div>
+
+            <img id="scene1" class="scene-pictures" src="images/gameImages/scene1.jpeg" alt="Spielszene 1, Truhe und Glyphen an den Wänden">
+            <img id="scene2" class="scene-pictures" src="images/gameImages/scene2.jpg" alt="Spielszene 2, Raum mit 4 Säulen">
+            <img id="scene3" class="scene-pictures" src="images/gameImages/scene3.png" alt="Spielszene3, Gang mit versperrter Tür">
+            <img id="scene4" class="scene-pictures" src="images/gameImages/scene4.png" alt="Spielszene4, Gang mit zwei Wächtern">
+            <img id="scene5" class="scene-pictures" src="images/gameImages/scene5.jpg" alt="Spielszene5, Wüstenszene mit Glückwünschen für das Beenden des Spiels">
+            <div id="hitbox1"></div>
+            <img id="hitbox2" src="images/pypyrusRolle.png" alt="Die Schriftrolle, die das erste Spiel startet">
+            <div id="hitbox3"></div>
+            <div id="hitbox4"></div>
+        </div>
+
+        <!-- Modalfenster von w3schools -->
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <span class="close">&times;</span>
+            <!-- Modal Content (The Image) -->
+            <img src="images/bsateprmpla51.png" class="modal-content" alt="Bild(er) innerhalb des Modalfenster" id="pic1">
+
+            <!--<iframe src="https://i.simmer.io/@DarkElitos/die-kammer-des-pharaos" id="unity-game"></iframe>     ## alternativ auch über iframe möglich -->
+            <div id="unity-container" class="unity-desktop">
+                <canvas id="unity-canvas"></canvas>
+                <div id="unity-loading-bar">
+                  <div id="unity-logo"></div>
+                  <div id="unity-progress-bar-empty">
+                    <div id="unity-progress-bar-full"></div>
+                  </div>
+                </div>
+                <div id="unity-warning"> </div>
+                <div id="unity-footer">
+                  <div id="unity-webgl-logo"></div>
+                  <div id="unity-fullscreen-button"></div>
+                  <div id="unity-build-title">Blockynator</div>
+                </div>
+            </div>
+          
+            <div class="codepanel">
+              <p>Code Panel</p>
+              <input placeholder="Eingabe hier" id="input-button"/>
+              <p class="response"></p>                            <!-- wird in Javascript bearbeitet-->
+              <button id="submit">Prüfen</button>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="news-container">
+        <h1 class="news-headline">Neuigkeiten</h1>
+        <ul class="news">
+            <li>Unser erstes Spiel "die Kammer des Pharao" ist jetzt verfügbar!</li>
+            <li>Das Bonusspiel ist jetzt in unsererer Spieleauswahl</li>
+            <li>Pharao Games startet ab heute offiziell!</li>
+        </ul>
+    </section>
+    <hr>
+    <footer>
+        <ul class="agb-datenschutz-impressum">
+            <li class="agb-datenschutz-impressum-li"><a href="agb.html">AGB</a></li>
+            <li class="agb-datenschutz-impressum-li"><a href="#">Datenschutz</a></li>
+            <li class="agb-datenschutz-impressum-li"><a href="kontakt.html">Impressum</a></li>
+        </ul>
+        <ul class="social-media">
+            <li class="social-media-li"><a href="dummyLinks/facebook.html" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li class="social-media-li"><a href="dummyLinks/instagram.html" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li class="social-media-li"><a href="dummyLinks/tiktok.html" target="_blank"><ion-icon name="logo-tiktok"></ion-icon></a></li>
+            <li class="social-media-li"><a href="dummyLinks/discord.html" target="_blank"><ion-icon name="logo-discord"></ion-icon></a></li>
+            <li class="social-media-li"><a href="dummyLinks/wechat.html" target="_blank"><ion-icon name="logo-wechat"></ion-icon></a></li>
+            <li class="social-media-li"><a href="dummyLinks/reddit.html" target="_blank"><ion-icon name="logo-reddit"></ion-icon></a></li>
+        </ul>
+        <button class="play-audio" type="button">Play Audio</button>
+        <button class="pause-audio" type="button">Pause Audio</button> 
+    </footer>
+    <script src="scripts/gameMainScript.js"></script>
+    <script src="scripts/unityScript.js"></script>
+</body>
+</html>
